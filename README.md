@@ -3,7 +3,9 @@ This is a script that uses [puppeteer](https://github.com/puppeteer/puppeteer) (
 
 ## Requirements
 - Docker
+
 **OR**
+
 - node.js (any version that supports puppeteer 2.0.0)
 - curl
 - the ability to run headless Chrome
