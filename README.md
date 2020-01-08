@@ -1,5 +1,5 @@
 # Midas Download Tool
-This is a script that uses [puppeteer](https://github.com/puppeteer/puppeteer) (headless Chrome) to download entire datasets presented through a web browser on the Kitware Midas platform. Originally, this tool was intended for downloading [Designed Database of MR Brain Images of Healthy Volunteers](https://www.insight-journal.org/midas/community/view/21), as it's unclear how else one should go about a bulk download. Seriously, where are the download links?
+This is a script that uses [puppeteer](https://github.com/puppeteer/puppeteer) (headless Chrome) to download entire datasets presented through a web browser on the Kitware Midas platform. Originally, this tool was intended for downloading [Designed Database of MR Brain Images of Healthy Volunteers](https://www.insight-journal.org/midas/community/view/21), as it's unclear how else one should go about a bulk download. Seriously, where are the "Download as Zip" links?
 
 ## Requirements
 - node.js (any version that supports puppeteer 2.0.0)
