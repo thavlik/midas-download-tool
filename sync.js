@@ -4,6 +4,10 @@ const path = require('path');
 const http = require('https');
 const child_process = require('child_process');
 
+if (process.argv.length != 4) {
+    throw new Error('usage: node sync.js https://midas-folder-root /local/download/dir');
+}
+
 const mkdirp = async dir => {
     if (fs.existsSync(dir)) {
         return;
@@ -113,7 +117,8 @@ const processPage = async (page, dest, url) => {
 (async () => {
     //await downloadFile('md5', 'https://www.insight-journal.org/midas/bitstream/keyfile/94523372178c72f9e00a8ef705430aa2');
     //console.log('it worky');
-    const url = 'https://insight-journal.org/midas/community/view/21';
+    const url = process.argv[2]; //'https://insight-journal.org/midas/community/view/21';
+    const root = process.argv[3];
     console.log('Download dataset from ' + url);
     const opts = {
         timeout: 10000,
@@ -125,7 +130,6 @@ const processPage = async (page, dest, url) => {
     }
     const browser = await puppeteer.launch(opts);
     const page = await browser.newPage();
-    const root = process.argv.length > 2 ? process.argv[2] : 'download';
     console.log(`Using download dir ${root}`);
     await mkdirp(root);
     try {

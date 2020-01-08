@@ -11,11 +11,13 @@ This is a script that uses [puppeteer](https://github.com/puppeteer/puppeteer) (
 - the ability to run headless Chrome
 
 ## Usage
-### With Docker (recommended)
-Build the image and mount the host's download folder to `/download` in the container. See `download-brain-mri-dataset.sh` for an example.
+The script `sync.js` expects two arguments: the remote directory root and the output folder. Example:
 
-### Without Docker
-`npm start` or `node sync.js` will synchronize the local folder `download` with the given URL, which should be served by Midas and present the desired file structure.
+`docker run -v $(pwd)/download thavlik/midas-download-tool:latest https://insight-journal.org/midas/community/view/21 /download`
+
+**OR**
+
+`mkdir download && node sync.js https://insight-journal.org/midas/community/view/21 $(pwd)/download`
 
 ## Dataset Paper Citation
 The MR brain images from healthy volunteers were collected and made available by the CASILab at The University of North Carolina at Chapel Hill and were distributed by the Midas Data Server at Kitware, Inc.

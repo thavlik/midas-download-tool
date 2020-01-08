@@ -28,5 +28,5 @@ COPY . .
 # See https://stackoverflow.com/questions/50662388/running-headless-chrome-puppeteer-with-no-sandbox
 ENV NO_SANDBOX 1
 
-CMD ["node", "sync.js", "/download"]
+CMD ["node", "sync.js"]
 
