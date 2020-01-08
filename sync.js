@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
-const http = require('https');
 const child_process = require('child_process');
 
 if (process.argv.length != 4) {
@@ -36,54 +35,29 @@ const getFiles = async page => {
 
 const downloadParseError = new Error('parse error');
 
-const downloadFile = async (dest, url) => new Promise((resolve, reject) => {
+const downloadFile = async (dest, url) => {
     if (fs.existsSync(dest)) {
         console.log(`Skipping ${dest}`);
-        resolve();
         return;
     }
+    // reroute all http to https
+    url = url.replace('http://', 'https://');
     console.log(`Downloading ${dest} from ${url}`);
     child_process.execSync(`curl ${url} -o \"${dest}\"`);
-    resolve();
-    return;
-
-    const start = Date.now();
-    const file = fs.createWriteStream(dest);
-    http.get(url, (response) => {
-        if (response.statusCode != 200) {
-            return reject(`received status code ${response.statusCode}`);
-        }
-        const elapsed = Date.now() - start;
-        console.log(`Downloaded ${dest} in ${elapsed / 1000.0} seconds`);
-        file.on('finish', () => {
-            file.close();
-            resolve();
-        }).on('error', err => {
-            fs.unlinkSync(dest);
-            reject(err);
-        });
-        response.pipe(file);
-    }).on('error', err => {
-        fs.unlinkSync(dest);
-        if (typeof err.message == 'string' &&
-            err.message == 'Parse Error') {
-            return reject(downloadParseError);
-        }
-        reject(err);
-    });
-});
+};
 
 const maxDownloadAttempts = 3;
 const retryDelay = 3000;
 
 const processPage = async (page, dest, url) => {
+    // Reroute all http to https
+    url = url.replace('http://', 'https://');
     console.log('Processing ' + url);
     await mkdirp(dest);
     const start = Date.now();
     await page.goto(url, { waitUntil: 'networkidle0' });
     await page.waitForSelector('#footer');
     console.log(`Page loaded in ${(Date.now() - start) / 1000} seconds`);
-
     const files = await getFiles(page);
     let attempt = 0;
     for (var i = 0; i < files.length; i++) {
@@ -116,7 +90,6 @@ const processPage = async (page, dest, url) => {
 
 (async () => {
     //await downloadFile('md5', 'https://www.insight-journal.org/midas/bitstream/keyfile/94523372178c72f9e00a8ef705430aa2');
-    //console.log('it worky');
     const url = process.argv[2]; //'https://insight-journal.org/midas/community/view/21';
     const root = process.argv[3];
     console.log('Download dataset from ' + url);
