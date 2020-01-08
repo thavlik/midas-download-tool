@@ -1,0 +1,5 @@
+download/
+node_modules/
+.vscode/
+*.png
+*.md

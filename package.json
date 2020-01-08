@@ -1,0 +1,14 @@
+{
+  "name": "midas-download-tool",
+  "version": "1.0.0",
+  "description": "A download automation tool for Midas",
+  "main": "sync.js",
+  "scripts": {
+    "start": "node sync.js"
+  },
+  "author": "Tom Havlik",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^2.0.0"
+  }
+}
