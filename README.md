@@ -13,11 +13,11 @@ This is a script that uses [puppeteer](https://github.com/puppeteer/puppeteer) (
 ## Usage
 The script `sync.js` expects two arguments: the remote directory root and the output folder. Example:
 
-`docker run -v $(pwd)/download thavlik/midas-download-tool:latest https://insight-journal.org/midas/community/view/21 /download`
+`mkdir download && docker run -v $(pwd)/download thavlik/midas-download-tool:latest https://insight-journal.org/midas/community/view/21 /download`
 
 **OR**
 
-`mkdir download && node sync.js https://insight-journal.org/midas/community/view/21 $(pwd)/download`
+`node sync.js https://insight-journal.org/midas/community/view/21 $(pwd)/download`
 
 ## Dataset Paper Citation
 The MR brain images from healthy volunteers were collected and made available by the CASILab at The University of North Carolina at Chapel Hill and were distributed by the Midas Data Server at Kitware, Inc.
