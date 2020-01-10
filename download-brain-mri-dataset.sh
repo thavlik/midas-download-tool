@@ -5,7 +5,7 @@ echo "Building Docker image and downloading the brain MRI dataset..."
 NAME=thavlik/midas-download-tool
 TAG=latest
 docker build -t $NAME:$TAG .
-mkdir download
+mkdir download || true
 docker run -v $(pwd)/download:/download $NAME:$TAG node sync.js \
     $DOWNLOAD_URL \
     /download
