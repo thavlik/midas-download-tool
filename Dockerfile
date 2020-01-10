@@ -23,7 +23,7 @@ ADD package.json package-lock.json /
 RUN npm install
 COPY . .
 
-# Necessary in Docker, but probably strips a layer of security from Chrome.
+# Necessary in Docker, but strips a layer of security from Chrome.
 # It's probably still safe in Docker.
 # See https://stackoverflow.com/questions/50662388/running-headless-chrome-puppeteer-with-no-sandbox
 ENV NO_SANDBOX 1
