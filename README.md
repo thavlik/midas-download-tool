@@ -31,7 +31,7 @@ $ docker run \
 **OR**
 
 ```bash
-node sync.js \
+$ node sync.js \
     https://insight-journal.org/midas/community/view/21 \
     $(pwd)/download
 ```
