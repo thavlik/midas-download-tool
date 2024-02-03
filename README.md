@@ -41,7 +41,11 @@ The MR brain images from healthy volunteers were collected and made available by
 
 Bullitt E, Zeng D, Gerig G, Aylward S, Joshi S, Smith JK, Lin W, Ewend MG (2005) Vessel tortuosity and brain tumor malignancy: A blinded study. Academic Radiology 12:1232-1240
 
-The bandwidth is generously provided by [The Insight Project](https://www.insight-journal.org/).
+MIDAS platform bandwidth was generously provided by [The Insight Project](https://www.insight-journal.org/). The above download link is now paid for by [me](https://github.com/thavlik).
 
 ## License
-Released under MIT. Have fun!
+### Data
+The MRI data was made publicly available by CASILab at The University of North Carolina at Chapel Hill (UNC).
+
+### Code
+All code in this repository is released under [MIT](LICENSE-MIT) / [Apache 2.0](LICENSE-Apache) dual license, which is extremely permissive. Please open an issue if somehow these terms are insufficient.
