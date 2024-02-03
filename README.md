@@ -23,7 +23,7 @@ The script `sync.js` expects two arguments: the remote directory root and the ou
 ```bash
 $ mkdir download
 $ docker run \
-    -v $(pwd)/download thavlik/midas-download-tool:latest 3
+    -v $(pwd)/download thavlik/midas-download-tool:latest \
     https://insight-journal.org/midas/community/view/21 \
     /download
 ```
