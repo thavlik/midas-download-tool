@@ -1,6 +1,6 @@
 # Midas Download Tool
 [<img src="https://img.shields.io/badge/maintenance%20status-as%20is-yellow">](https://github.com/thavlik/t4vd)
-[<img src="https://img.shields.io/badge/Language-javascript-lightblue.svg">](https://nodejs.org/en)
+[<img src="https://img.shields.io/badge/Language-javascript-blue.svg">](https://nodejs.org/en)
 [<img src="https://img.shields.io/badge/License-Apache_2.0-orange.svg">](./LICENSE)
 [<img src="https://img.shields.io/badge/License-MIT-lightblue.svg">](./LICENSE-MIT)
 
