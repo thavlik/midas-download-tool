@@ -4,7 +4,7 @@
 [<img src="https://img.shields.io/badge/License-Apache_2.0-orange.svg">](./LICENSE)
 [<img src="https://img.shields.io/badge/License-MIT-lightblue.svg">](./LICENSE-MIT)
 
-> ***UPDATE FEB 3, 2024: Since the [MIDAS platform has been retired by Kitware](https://discourse.slicer.org/t/retiring-midas-kitware-com-data-repository/), the data can be downloaded as a ~5.2 GiB .zip file [here](https://casilab-brain-mri.nyc3.digitaloceanspaces.com/casilab-brain-mri-release.zip).***
+> ***UPDATE FEB 3, 2024: Since the [MIDAS platform has been retired by Kitware](https://discourse.slicer.org/t/retiring-midas-kitware-com-data-repository/), the Casilab MRI dataset can be downloaded as a ~5.2 GiB .zip file [here](https://casilab-brain-mri.nyc3.digitaloceanspaces.com/casilab-brain-mri-release.zip).***
 
 This is a script that used [puppeteer](https://github.com/puppeteer/puppeteer) (headless Chrome) to download entire datasets presented through a web browser on the Kitware Midas platform. Originally, this tool was intended for downloading [Designed Database of MR Brain Images of Healthy Volunteers](https://www.insight-journal.org/midas/community/view/21), as it's unclear how else one should go about a bulk download. Seriously, where were the "Download as Zip" links?
 
